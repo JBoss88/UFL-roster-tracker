@@ -1,0 +1,22 @@
+# Security / Secrets
+.env
+.secrets
+
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Python Cache & Compiled Files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDEs and Editors
+.vscode/
+.idea/
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
