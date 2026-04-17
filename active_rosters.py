@@ -15,9 +15,9 @@ def scrape_active_roster():
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
     
     try:
-        response = requests.get(TEAM_URL, headers=headers, timeout=10)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
+        res = requests.get(TEAM_URL, headers=headers, timeout=10)
+        res.raise_for_status()
+        soup = BeautifulSoup(res.text, 'html.parser')
         
         # Find the main roster table
         roster_table = soup.find('table')
@@ -58,7 +58,7 @@ def send_weekend_blast(offense, defense):
     defense_text = "\n".join(defense)[:1024]
 
     payload = {
-        "content": f"🏈 **WEEKEND ROSTER BLAST: {TEAM_NAME}** 🏈\nHere is who is taking the field this weekend!",
+        "content": f"🏈 **WEEKEND ROSTER BLAST: {TEAM_NAME}** 🏈\nHere is who is taking the field this weekend.",
         "embeds": [
             {
                 "title": "Offensive Unit",
